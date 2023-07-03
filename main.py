@@ -3,12 +3,12 @@ import random
 user_wins = 0
 computer_wins = 0
 
-options = ["rock", "paper", "scissors"]
+options = ["камень", "бумага", "ножницы"]
 options[0]
 
 while True:
-    user_input = input("Введите Камень/Ножницы/Бумага или Q чтобы выйти")
-    if user_input == "q":
+    user_input = input("Введите Камень/Ножницы/Бумага или 'выйти' чтобы выйти")
+    if user_input == "выйти":
         break
 
     if user_input not in options:
@@ -19,4 +19,24 @@ while True:
     computer_pick = options[random_number]
     print("Компьютер выбрал", computer_pick + ".")
 
-    
+    if user_input == "камень" and computer_pick == "ножницы":
+        print("Вы выйграли!")
+        user_wins += 1
+        continue
+
+    elif user_input == "бумага" and computer_pick == "камень":
+        print("Вы выйграли!")
+        user_wins += 1
+
+    elif user_input == "ножницы" and computer_pick == "бумага":
+        print("Вы выйграли!")
+        user_wins += 1
+
+    else:
+        print("Вы проиграли!")
+        computer_wins += 1
+
+
+print("Вы выйграли", user_wins, "раз.")
+print("Компьютер выграл", computer_wins, "раз.")
+print("Конец игры!")
