@@ -31,6 +31,9 @@ while True:
     elif user_input == "ножницы" and computer_pick == "бумага":
         print("Вы выйграли!")
         user_wins += 1
+        
+    elif user_input == "ножницы" and computer_pick == "ножницы" or user_input == "бумагп" and computer_pick == "бумага" or user_input == "камень" and computer_pick == "камень":
+        print("Ничья!")
 
     else:
         print("Вы проиграли!")
